@@ -4,6 +4,8 @@
 #include <vector>
 #include <set>
 #include <algorithm>
+#include "CustomNextFreeLayer.h"
+#include "SetGroupIDLayer.h"
 
 using namespace geode::prelude;
 
