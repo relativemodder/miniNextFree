@@ -11,10 +11,11 @@ using namespace geode::prelude;
 
 class CustomNextFreeLayer : public FLAlertLayer {
 public:
-	geode::InputNode* m_nextFreeInput = nullptr;
+	CCTextInputNode* m_nextFreeInput = nullptr;
 
 	void onClose(CCObject*) {
-		int nextFreeValue = std::stoi(m_nextFreeInput->getString());
+		auto actualString = std::string(m_nextFreeInput->getString().c_str()) == "" ? "0" : m_nextFreeInput->getString();
+		int nextFreeValue = std::stoi(actualString);
 		nextFreeValue = nextFreeValue > 0 ? nextFreeValue : 1;
 		Mod::get()->setSavedValue("relative-next-free", nextFreeValue);
         this->removeFromParent();
@@ -67,12 +68,12 @@ public:
 		std::stringstream ss;
         ss << Mod::get()->getSavedValue("relative-next-free", 1);
 
-		m_nextFreeInput = geode::InputNode::create(80.0f, "Next free");
-        m_nextFreeInput->setPosition(mainMenu->getContentSize() / 2 + ccp(0.0, 0.0));
-        m_nextFreeInput->setString(ss.str());
-        m_nextFreeInput->getInput()->setAllowedChars("098765431");
-        m_nextFreeInput->getInput()->setMaxLabelLength(4);
-        m_nextFreeInput->getInput()->setID("NEXTFREE_BY_RELATIVE"_spr);
+		m_nextFreeInput = CCTextInputNode::create(100, 40, "Next free", "bigFont.fnt");
+		m_nextFreeInput->setPosition(mainMenu->getContentSize() / 2 + ccp(0.0, 0.0));
+		m_nextFreeInput->setString(ss.str());
+		m_nextFreeInput->setAllowedChars("0123456789");
+		m_nextFreeInput->setMaxLabelLength(5);
+		m_nextFreeInput->setID("NEXTFREE_BY_RELATIVE"_spr);
 
 		auto titleLabel = CCLabelBMFont::create("Set Next Free", "bigFont.fnt");
 		m_mainLayer->addChild(titleLabel);
