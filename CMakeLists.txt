@@ -4,8 +4,6 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_OSX_ARCHITECTURES "x86_64")
 set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
-set(ENV{GEODE_BINDINGS_REPO_PATH} "D:/coding/miniNextFree/bindings")
-
 project(miniNextFree VERSION 1.0.0)
 
 file(GLOB SOURCES
