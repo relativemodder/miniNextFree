@@ -35,12 +35,12 @@ int LevelEditorLayer_getNextFreeGroupID(LevelEditorLayer* self, CCArray* p0) {
 }
 
 class $modify(LevelEditorLayer) {
-	int getNextFreeGroupID(LevelEditorLayer* self, CCArray* p0) {
+	int getNextFreeGroupID(CCArray* p0) {
 		std::set<short> usedGroups = {};
 	
 		CCObject* obj = nullptr;
 
-		CCARRAY_FOREACH(self->m_objects, obj) {
+		CCARRAY_FOREACH(this->m_objects, obj) {
 			GameObject* thisBlock = static_cast<GameObject*>(obj);
 			auto groups = thisBlock->m_groups;
 
