@@ -1,9 +1,12 @@
+#pragma once
+
 #include <Geode/Geode.hpp>
 #include <Geode/modify/SetGroupIDLayer.hpp>
 #include <array>
 #include <vector>
 #include <set>
 #include <algorithm>
+#include "CustomNextFreeLayer.h"
 
 using namespace geode::prelude;
 
