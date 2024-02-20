@@ -4,7 +4,8 @@
 	"id": "relative.mininextfree",
 	"name": "miniNextFree",
 	"developer": "relative",
-	"description": "",
+	"description": "Adds the ability to set next free group",
+	"repository": "https://github.com/relativemodder/miniNextFree",
 	"gd": {
 		"win": "*",
 		"android": "*"
