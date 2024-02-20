@@ -10,7 +10,7 @@
 
 using namespace geode::prelude;
 
-class $modify(LevelEditorLayer) {
+class $modify(CustomLevelEditorLayer, LevelEditorLayer) {
 	int getNextFreeGroupID(CCArray* p0) {
 		int nextFreeMinClamp = Mod::get()->getSavedValue("relative-next-free", 1);
 		std::set<short> usedGroups = {};
