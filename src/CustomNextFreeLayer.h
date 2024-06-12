@@ -63,7 +63,7 @@ public:
 		okBtn->setPosition({winSize.width / 2, winSize.height / 2.f - 40.f});
 
 		m_mainLayer->setScale(0.0f);
-		m_mainLayer->runAction(CCEaseBackOut::create(CCScaleTo::create(0.15, 1.0f)));
+		m_mainLayer->runAction(CCEaseInOut::create(CCScaleTo::create(0.15, 1.0f), 0.7f));
 
 		std::stringstream ss;
         ss << Mod::get()->getSavedValue("relative-next-free", 1);
