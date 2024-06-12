@@ -31,7 +31,7 @@ public:
 
 		backSprite->setPosition({winSize.width / 2, winSize.height / 2});
 
-		backSprite->runAction(CCEaseBackOut::create(CCScaleTo::create(0.15, 1.0f)));
+		backSprite->runAction(CCEaseInOut::create(CCScaleTo::create(0.15, 1.0f), 0.7f));
 		this->runAction(CCFadeTo::create(0.2f, 0x64));
 
 		return backSprite;
